@@ -5,5 +5,6 @@ pytablewriter==0.64.2
 PyYAML==6.0
 requests==2.27.1
 pymysql==1.0.2
+Werkzeug==2.2.1
 python-socketio[client]==5.0.4
 kubernetes==24.2.0
