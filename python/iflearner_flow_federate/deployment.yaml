@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iflearner-flow-federate
+  namespace: iflearner
+spec:
+  selector:
+    matchLabels:
+      app: iflearner-flow-federate
+  template:
+    metadata:
+      labels:
+        app: iflearner-flow-federate
+    spec:
+      serviceAccountName: iflearner-operator-controller-manager
+      volumes:
+        - name: federate-config
+          hostPath:
+            path: /data/shengxu8/projects/iflearner-flow/python/iflearner_flow_federate/conf/flow_federate_dev.yaml
+            type: File
+      containers:
+        - name: mysql
+          image: mysql:5.7.26
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "ozEUd$0%6@M4"
+            - name: MYSQL_DATABASE
+              value: gx_day16
+
+        - name: iflearner-flow-federate
+          image: iflearner-flow:0.1
+          workingDir: /iflearner-flow/python/iflearner_flow_federate
+          command: 
+            - sh
+            - run.sh
+          volumeMounts:
+            - name: federate-config
+              readOnly: true
+              mountPath: /iflearner-flow/python/iflearner_flow_federate/conf/flow_federate_dev.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iflearner-flow-federate-svc
+  namespace: iflearner
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 1236
+      targetPort: 1236
+      nodePort: 31236
+  selector:
+    app: iflearner-flow-federate

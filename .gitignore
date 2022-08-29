@@ -1,0 +1,19 @@
+# Ifleaner-flow files
+log/*.log
+.mypy_cache
+python/iflearner_flow_server/log
+python/iflearner_flow_federate/log
+python/log
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode
+.idea
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class

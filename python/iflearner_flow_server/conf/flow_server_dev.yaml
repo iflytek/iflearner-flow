@@ -1,0 +1,39 @@
+flask:
+  debug: false
+
+database:
+  name: "flow_server"
+  host: "127.0.0.1"
+  port: 3306
+  user: "flow"
+  password: "*********"
+  options:
+    init_command: "SET sql_mode='STRICT_TRANS_TABLES'"
+  sqlalchemy_track_modifycations: false
+  sqlalchemy_echo: false
+  sqlalchemy_pool_size: 10
+  sqlalchemy_pool_timeout: 10
+  sqlalchemy_pool_overflow: 2
+
+flow:
+  iflearner_server_image: "iflearner:0.1.3"
+  iflearner_server_args:
+    - "python"
+    - "iflearner/business/homo/aggregate_server.py"
+
+log:
+  flow:
+    level: "DEBUG"
+    enable_file: true
+    enable_console: true
+    log_path: "./log/flow.log"
+  sockeio:
+    level: "INFO"
+    enable_file: true
+    enable_console: false
+    log_path: "./log/socket_io.log"
+  sqlengine:
+    level: "INFO"
+    enable_file: true
+    enable_console: false
+    log_path: "./log/sql_engine.log"

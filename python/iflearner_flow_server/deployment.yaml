@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iflearner-flow-server
+  namespace: iflearner
+spec:
+  selector:
+    matchLabels:
+      app: iflearner-flow-server
+  template:
+    metadata:
+      labels:
+        app: iflearner-flow-server
+    spec:
+      serviceAccountName: iflearner-operator-controller-manager
+      volumes:
+        - name: server-config
+          hostPath:
+            path: /data/shengxu8/projects/iflearner-flow/python/iflearner_flow_server/conf/flow_server_dev.yaml
+            type: File
+      containers:
+        - name: mysql
+          image: mysql:5.7.26
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "ozEUd$0%6@M4"
+            - name: MYSQL_DATABASE
+              value: gx_day16
+
+        - name: iflearner-flow-server
+          image: iflearner-flow:0.1
+          workingDir: /iflearner-flow/python/iflearner_flow_server
+          command: 
+            - sh
+            - run.sh
+          volumeMounts:
+            - name: server-config
+              readOnly: true
+              mountPath: /iflearner-flow/python/iflearner_flow_server/conf/flow_server_dev.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iflearner-flow-server-svc
+  namespace: iflearner
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 1235
+      targetPort: 1235
+      nodePort: 31235
+  selector:
+    app: iflearner-flow-server

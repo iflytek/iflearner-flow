@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: iflearner_flow_federate
+spec:
+  selector:
+    app: iflearner_flow_federate
+  type: NodePort
+  ports:
+  -  port: 1236
+     protocol: TCP
+     targetPort: 1236
+     nodePort: 32036
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iflearner_flow_federate
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iflearner_flow_federate
+  template:
+    metadata:
+      labels:
+        app: iflearner_flow_federate
+    spec:
+      containers:
+      - name: iflearner_flow_federate
+        image: iflearner_flow_federate:0.1
+        command: ["python3", "app.py"]
+        args:
+        - --host 0.0.0.0
+        - --port 1236
+        env:
+          - name: FLASK_ENV
+            value: "production"
+          - name: FLOW_FEDERATE_CONF_PATH
+              value: "/data/iflearner_flow/python/iflearner_flow_federate/conf/flow_federate_prod.yaml"
+        ports:
+        - name: http
+          containerPort: 1236
+        volumeMounts:
+          - mountPath: /etc/localtime
+            name: localtime
+          - mountPath: /etc/hosts
+            name: hosts
+          - mountPath: /data/iflearner_flow/python/iflearner_flow_federate/conf/flow_federate_prod.yaml
+              name: conf
+          - mountPath: /data/iflearner_flow/python/iflearner_flow_federate/log
+              name: log
+          volumes:
+            - name: localtime
+              hostPath:
+                path: /etc/localtime
+            - name: hosts
+              hostPath:
+                path: /etc/hosts
+            - name: conf
+                hostPath:
+                  path: ${PWD}/conf/flow_federate_prod.yaml
+            - name: log
+                hostPath:
+                  path: ${PWD}/log

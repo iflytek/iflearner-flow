@@ -1,0 +1,232 @@
+{
+  "id": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+  "name": "Iflearner Flow Server API 1.0",
+  "description": "Iflearner Flow Server API",
+  "order": [
+    "38537e93-affc-5ffa-8fc2-0f963bc66bee"
+  ],
+  "requests": [
+    {
+      "id": "38537e93-affc-5ffa-8fc2-0f963bc66bee",
+      "method": "GET",
+      "name": "Swagger specifications",
+      "description": "The API Swagger specifications as JSON",
+      "url": "http://localhost/api/v1/swagger.json",
+      "headers": "",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "time": 1658729902
+    },
+    {
+      "id": "18ffd162-891b-5115-8f2a-189eb1691b92",
+      "method": "GET",
+      "name": "get_federate_list",
+      "description": "List Federated members",
+      "url": "http://localhost/api/v1/federate",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "60baa680-07f1-50cb-96ce-a38d605008d7",
+      "pathVariables": {},
+      "time": 1658729902
+    },
+    {
+      "id": "3cf3b181-6b1c-5ec5-a5cf-d476a99e702e",
+      "method": "POST",
+      "name": "post_task_list",
+      "description": "Create a task",
+      "url": "http://localhost/api/v1/task",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {},
+      "time": 1658729902
+    },
+    {
+      "id": "1bc8e2dc-d973-56d4-927a-51a96eacc769",
+      "method": "GET",
+      "name": "get_task_list",
+      "description": "List tasks",
+      "url": "http://localhost/api/v1/task",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {},
+      "time": 1658729902
+    },
+    {
+      "id": "e28db132-f6c0-52eb-ba9c-529f1c72d801",
+      "method": "GET",
+      "name": "get_task",
+      "description": "Get a specified task",
+      "url": "http://localhost/api/v1/task/:task_id",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "566bfad5-3db5-5352-bbbe-24f97b3cdd83",
+      "method": "DELETE",
+      "name": "delete_task",
+      "description": "Delete a specified task",
+      "url": "http://localhost/api/v1/task/:task_id",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "15fbc4f4-eb5f-5abd-af0a-a2401b190d73",
+      "method": "PUT",
+      "name": "put_task",
+      "description": "Update a specified task",
+      "url": "http://localhost/api/v1/task/:task_id",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "d438cb56-fa99-58e1-9fe8-c278fdc49415",
+      "method": "POST",
+      "name": "post_start_task",
+      "description": "Start task",
+      "url": "http://localhost/api/v1/task/:task_id/start",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "cd8eec31-1f8a-57a6-9c27-27c9f30717fa",
+      "method": "POST",
+      "name": "post_stop_task",
+      "description": "Stop task",
+      "url": "http://localhost/api/v1/task/:task_id/stop",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "17acdb31-77c4-5896-8f29-8a56a71769ae",
+      "method": "POST",
+      "name": "post_template_list",
+      "description": "Create a template",
+      "url": "http://localhost/api/v1/template",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "pathVariables": {},
+      "time": 1658729902
+    },
+    {
+      "id": "83c99ad8-e1aa-5823-969f-b6b0f3e4da56",
+      "method": "GET",
+      "name": "get_template_list",
+      "description": "List templates",
+      "url": "http://localhost/api/v1/template",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "pathVariables": {},
+      "time": 1658729902
+    },
+    {
+      "id": "31da55e5-f151-5b8b-916d-00ffb11e8d93",
+      "method": "GET",
+      "name": "get_template",
+      "description": "Get a specified template",
+      "url": "http://localhost/api/v1/template/:template_id",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "pathVariables": {
+        "template_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "1faaac77-a7f2-5a51-9e79-ba0f6bc83bc5",
+      "method": "DELETE",
+      "name": "delete_template",
+      "description": "Delete a specified template",
+      "url": "http://localhost/api/v1/template/:template_id",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "pathVariables": {
+        "template_id": ""
+      },
+      "time": 1658729902
+    },
+    {
+      "id": "c4722ec8-6ca5-57e4-8048-e285f044e32a",
+      "method": "PUT",
+      "name": "put_template",
+      "description": "Update a specified template",
+      "url": "http://localhost/api/v1/template/:template_id",
+      "headers": "Content-Type:application/json\nX-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "pathVariables": {
+        "template_id": ""
+      },
+      "time": 1658729902
+    }
+  ],
+  "folders": [
+    {
+      "id": "60baa680-07f1-50cb-96ce-a38d605008d7",
+      "name": "federate",
+      "description": "Federate API",
+      "order": [
+        "18ffd162-891b-5115-8f2a-189eb1691b92"
+      ],
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440"
+    },
+    {
+      "id": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "name": "task",
+      "description": "Task API",
+      "order": [
+        "3cf3b181-6b1c-5ec5-a5cf-d476a99e702e",
+        "1bc8e2dc-d973-56d4-927a-51a96eacc769",
+        "e28db132-f6c0-52eb-ba9c-529f1c72d801",
+        "566bfad5-3db5-5352-bbbe-24f97b3cdd83",
+        "15fbc4f4-eb5f-5abd-af0a-a2401b190d73",
+        "d438cb56-fa99-58e1-9fe8-c278fdc49415",
+        "cd8eec31-1f8a-57a6-9c27-27c9f30717fa"
+      ],
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440"
+    },
+    {
+      "id": "cfde646e-a07f-52b7-9c2d-886a4193a393",
+      "name": "template",
+      "description": "Template  API",
+      "order": [
+        "17acdb31-77c4-5896-8f29-8a56a71769ae",
+        "83c99ad8-e1aa-5823-969f-b6b0f3e4da56",
+        "31da55e5-f151-5b8b-916d-00ffb11e8d93",
+        "1faaac77-a7f2-5a51-9e79-ba0f6bc83bc5",
+        "c4722ec8-6ca5-57e4-8048-e285f044e32a"
+      ],
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440"
+    }
+  ],
+  "timestamp": 1658729902
+}

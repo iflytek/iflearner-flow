@@ -1,0 +1,12 @@
+docker_py==1.10.6
+Flask==2.1.2
+flask_restx==0.5.1
+Flask_SocketIO==5.2.0
+Flask_SQLAlchemy==2.5.1
+pytablewriter==0.64.2
+PyYAML==6.0
+SQLAlchemy==1.4.39
+pymysql==1.0.2
+werkzeug==2.1.2
+eventlet
+kubernetes==24.2.0
