@@ -1,6 +1,13 @@
 ## Introduction
 
-We will describe how to use the `flow_server` sdk to interact with `iflearner_flow_server`.
+We will describe how to use the `flow_server_sdk` sdk library to interact with `iflearner_flow_server` service.
+
+## Installation
+You can execute the following command to quickly install:
+```shell
+pip install iflearner-flow-client
+```
+Then you can reference the `flow_server_sdk` library for interface calls
 
 ## Initialization
 
