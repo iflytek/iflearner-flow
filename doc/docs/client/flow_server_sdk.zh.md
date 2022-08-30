@@ -1,6 +1,13 @@
 ## Introduction
 
-我们将介绍如何使用`flow_server`sdk与`iflearner_flow_server`进行交互。
+我们将介绍如何使用`flow_server_sdk`sdk库与`iflearner_flow_server`服务进行交互。
+
+## Installation
+您可以执行下述命令进行快速安装:
+```shell
+pip install iflearner-flow-client
+```
+然后, 您就可以引用`flow_server_sdk`库进行接口调用
 
 ## Initialization
 

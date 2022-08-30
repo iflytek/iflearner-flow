@@ -1,7 +1,7 @@
 # Iflearner Flow Client
 Interactive tools for `Iflearner Flow`, including `flow sdk` and `flow cli`
 
-### 安装
+### Installation
 You can execute the following command to quickly install:
 ```shell
 pip install iflearner-flow-client
