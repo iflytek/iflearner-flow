@@ -16,7 +16,7 @@ spec:
       volumes:
         - name: server-config
           hostPath:
-            path: /data/shengxu8/projects/iflearner-flow/python/iflearner_flow_server/conf/flow_server_dev.yaml
+            path: /path/to/iflearner-flow/python/iflearner_flow_server/conf/flow_server_dev.yaml
             type: File
       containers:
         - name: mysql

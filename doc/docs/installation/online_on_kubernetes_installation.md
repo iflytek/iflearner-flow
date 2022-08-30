@@ -25,11 +25,11 @@ Iflearner Flow is a multi-party joint task security scheduling platform based on
 
 ### 1.3 System Design
 
-[Iflearner Flow Design](../design/design.md)
+[Iflearner Flow Design](../tutorial/system_arch.md)
 
 ## 2. Detailed design
 ### 2.1 Deployment Planning
- In this example, for the convenience of demonstration, there is only one host on the service side, and the federation side. In fact, relying on kubernetes, the cluster size on each side can be freely expanded.
+In this example, for the convenience of demonstration, there is only one host on the service side, and the federation side. In fact, relying on kubernetes, the cluster size on each side can be freely expanded.
 
 1. Service side
 
@@ -66,25 +66,14 @@ Iflearner Flow is a multi-party joint task security scheduling platform based on
 Recommend a minimalist one-click deployment method [sealos](https://www.sealos.io/zh-Hans/docs/Intro)
 > Currently supported version is 1.18
 
-#### 3.2.2 Deploy mysql
-Deployment can be done quickly with the following command:
-```shell
-wget ***
-kubectl apply -f **
-````
+#### 3.2.2 Deploy iflearner-operator
+Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.
 
 #### 3.2.3 Deploy iflearner-flow-server
 Deployment can be done quickly with the following command:
-```shell
-wget ***
-kubectl apply -f **
-````
 
-#### 3.2.4 Deploy iflearner-operator
-Deployment can be done quickly with the following command:
 ```shell
-wget ***
-kubectl apply -f **
+kubectl create -f python/iflearner_flow_server/deployment.yaml
 ```
 
 ### 3.3 Federal side deployment
@@ -94,55 +83,48 @@ The implementation steps of each federal party are consistent, and the following
 Recommend a minimalist one-click deployment method [sealos](https://www.sealos.io/zh-Hans/docs/Intro)
 > Currently supported version is 1.18
 
-#### 3.3.2 Deploy mysql
-Deployment can be done quickly with the following command:
-```shell
-wget ***
-kubectl apply -f **
-````
+#### 3.3.2 Deploy iflearner-operator
 
-#### 3.3.3 Deploy iflearner-flow-server
-Deployment can be done quickly with the following command:
-```shell
-wget ***
-kubectl apply -f **
-````
+Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.
 
-#### 3.3.4 Deploy iflearner-operator
+#### 3.3.3 Deploy iflearner-flow-federate
+
 Deployment can be done quickly with the following command:
+
 ```shell
-wget ***
-kubectl apply -f **
+kubectl create -f python/iflearner_flow_federate/deployment.yaml
 ```
 
-## 4. Deployment test
-### 4.1 Service-side testing
-
-### 4.2 Federal side test
-
-## 5. System operation and maintenance
-### 5.1 View component status
+## 4. System operation and maintenance
+### 4.1 View component status
 kubectl get pods -o wide -n iflearner
 
-### 5.2 View component log
-kubectl logs *** -n iflearner
+### 4.2 View component log
 
-### 5.3 View component persistent file directory
+```shell
+kubectl logs *** -n iflearner
+```
+
+### 4.3 View component persistent file directory
 kubectl describe pods *** -n iflearner
 
-## 6. System Uninstall
-### 6.1 Overview
+## 5. System Uninstall
+### 5.1 Uninstall iflearner-flow-server
 
-It supports uninstalling all components, and also supports specifying a single component to complete the uninstallation.
+Uninstall with the following command:
 
-### 6.2 Execute uninstall
+```shell
+kubectl delete -f python/iflearner_flow_server/deployment.yaml
+```
 
-- all components
-    ```shell
-    sh uninstall.sh **
-    ````
+### 5.2 Uninstall iflearner-flow-federate
 
-- single component
-    ```shell
-    sh uninstall.sh **
-    ````
+Uninstall with the following command:
+
+```shell
+kubectl delete -f python/iflearner_flow_federate/deployment.yaml
+```
+
+### 5.3 Uninstall iflearner-operator
+
+Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.

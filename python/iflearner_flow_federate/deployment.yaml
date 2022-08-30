@@ -16,7 +16,7 @@ spec:
       volumes:
         - name: federate-config
           hostPath:
-            path: /data/shengxu8/projects/iflearner-flow/python/iflearner_flow_federate/conf/flow_federate_dev.yaml
+            path: /path/to/iflearner-flow/python/iflearner_flow_federate/conf/flow_federate_dev.yaml
             type: File
       containers:
         - name: mysql

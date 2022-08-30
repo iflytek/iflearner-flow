@@ -25,7 +25,7 @@ Iflearner Flow是一个基于底层联邦学习框架Iflearner，针对横向联
 
 ### 1.3 系统设计
 
-[系统设计](../design/design_zh.md)
+[系统设计](../tutorial/system_arch_zh.md)
 
 ## 2. 详细设计
 ### 2.1 部署规划
@@ -66,25 +66,14 @@ Iflearner Flow是一个基于底层联邦学习框架Iflearner，针对横向联
 推荐一个极简的一键部署方式[sealos](https://www.sealos.io/zh-Hans/docs/Intro)
 > 当前支持版本为1.18
 
-#### 3.2.2 部署mysql
-可以通过下述命令快速完成部署:
-```shell
-wget ***
-kubectl apply -f **
-```
+#### 3.2.2 部署iflearner-operator
+参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)文档
 
 #### 3.2.3 部署iflearner-flow-server
 可以通过下述命令快速完成部署:
-```shell
-wget ***
-kubectl apply -f **
-```
 
-#### 3.2.4 部署iflearner-operator
-可以通过下述命令快速完成部署:
 ```shell
-wget ***
-kubectl apply -f **
+kubectl create -f python/iflearner_flow_server/deployment.yaml
 ```
 
 ### 3.3 联邦侧部署
@@ -94,65 +83,50 @@ kubectl apply -f **
 推荐一个极简的一键部署方式[sealos](https://www.sealos.io/zh-Hans/docs/Intro)
 > 当前支持版本为1.18
 
-#### 3.3.2 部署mysql
+#### 3.3.2 部署iflearner-operator
+参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)文档
+
+#### 3.3.3 部署iflearner-flow-federate
 可以通过下述命令快速完成部署:
+
 ```shell
-wget ***
-kubectl apply -f **
+kubectl create -f python/iflearner_flow_federate/deployment.yaml
 ```
 
-#### 3.3.3 部署iflearner-flow-server
-可以通过下述命令快速完成部署:
+## 4. 系统运维
+### 4.1 查看组件状态
+
 ```shell
-wget ***
-kubectl apply -f **
-```
-
-#### 3.3.4 部署iflearner-operator
-可以通过下述命令快速完成部署:
-```shell
-wget ***
-kubectl apply -f **
-```
-
-## 4. 部署测试
-### 4.1 服务侧测试
-查看前端页面是否能正常访问
-
-### 4.2 联邦侧测试
-查看前端页面是否能正常访问
-
-## 5. 系统运维
-### 5.1 查看组件状态
 kubectl get pods -o wide -n iflearner
+```
 
-### 5.2 查看组件日志
+### 4.2 查看组件日志
+
+```shell
 kubectl logs *** -n iflearner
+```
 
-### 5.3 查看组件持久化文件目录
+### 4.3 查看组件持久化文件目录
+
+```shell
 kubectl describe pods *** -n iflearner
+```
 
-## 6. 系统卸载
-### 6.1 概述
+## 5. 系统卸载
+### 5.1 卸载iflearner-flow-server
+可以通过下述命令快速完成卸载:
 
-支持对所有组件进行卸载, 也支持指定单个组件完成卸载。
+```shell
+kubectl delete -f python/iflearner_flow_server/deployment.yaml
+```
 
-### 6.2 执行卸载
+### 5.2 卸载iflearner-flow-federate
+可以通过下述命令快速完成卸载:
 
-- 全部组件
+```shell
+kubectl delete -f python/iflearner_flow_federate/deployment.yaml
+```
 
-    ```shell
-    sh uninstall.sh **
-    ```
-
-- 单个组件
-
-    ```shell
-    sh uninstall.sh **
-    ```
-
-
-
-
-
+### 5.3 卸载iflearner-operator
+参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)文档
 
