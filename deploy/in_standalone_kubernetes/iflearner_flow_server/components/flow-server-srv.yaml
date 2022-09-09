@@ -61,7 +61,7 @@ spec:
       serviceAccountName: iflearner-operator-controller-manager
       containers:
         - name: flow-server-srv
-          image: iflearner-flow-server:0.1
+          image: ghcr.io/iflytek/iflearner-flow-server:0.1.0
           workingDir: /data/iflearner-flow/python/iflearner_flow_server
           command:
             - python3

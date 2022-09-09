@@ -58,8 +58,11 @@ In this example, for the convenience of demonstration, there is only one host on
 | ------------ | ------------------------------------------------------------ |
 | Firewall Policy | 1. Firewall devices need to support long connections and unlimited connections. |
 
-## 3. Project Deployment
+## 3. Project deployment (deployment in real scenarios)
+In a real scenario, all parties are isolated and need to deploy a set of kubernetes clusters.
+
 ### 3.1 Deployment Diagram
+![](images/iflearner-flow-deploy-arch.png)
 
 ### 3.2 Service side deployment
 #### 3.2.1 Deploy kubernetes
@@ -67,14 +70,10 @@ Recommend a minimalist one-click deployment method [sealos](https://www.sealos.i
 > Currently supported version is 1.18
 
 #### 3.2.2 Deploy iflearner-operator
-Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.
+See [iflearner-operator](https://github.com/iflytek/iflearner-operator)
 
 #### 3.2.3 Deploy iflearner-flow-server
-Deployment can be done quickly with the following command:
-
-```shell
-kubectl create -f python/iflearner_flow_server/deployment.yaml
-```
+We provide a minimalist deployment method, please refer to [flow-server deployment and operation guide](https://github.com/iflytek/iflearner-flow/blob/main/deploy/in_standalone_kubernetes/iflearner_flow_server/README.md )
 
 ### 3.3 Federal side deployment
 The implementation steps of each federal party are consistent, and the following are the implementation steps under a single federal party
@@ -84,47 +83,13 @@ Recommend a minimalist one-click deployment method [sealos](https://www.sealos.i
 > Currently supported version is 1.18
 
 #### 3.3.2 Deploy iflearner-operator
-
-Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.
+See [iflearner-operator](https://github.com/iflytek/iflearner-operator)
 
 #### 3.3.3 Deploy iflearner-flow-federate
+We provide a minimalist deployment method, please refer to [flow-federate deployment and operation guide](https://github.com/iflytek/iflearner-flow/blob/main/deploy/in_standalone_kubernetes/iflearner_flow_federate/README.md )
 
-Deployment can be done quickly with the following command:
+## 4. Project deployment (deployment under test and verification scenarios)
+In the test and verification scenario, we can reuse a set of kubernetes clusters and perform test verification under the same cluster.
 
-```shell
-kubectl create -f python/iflearner_flow_federate/deployment.yaml
-```
-
-## 4. System operation and maintenance
-### 4.1 View component status
-kubectl get pods -o wide -n iflearner
-
-### 4.2 View component log
-
-```shell
-kubectl logs *** -n iflearner
-```
-
-### 4.3 View component persistent file directory
-kubectl describe pods *** -n iflearner
-
-## 5. System Uninstall
-### 5.1 Uninstall iflearner-flow-server
-
-Uninstall with the following command:
-
-```shell
-kubectl delete -f python/iflearner_flow_server/deployment.yaml
-```
-
-### 5.2 Uninstall iflearner-flow-federate
-
-Uninstall with the following command:
-
-```shell
-kubectl delete -f python/iflearner_flow_federate/deployment.yaml
-```
-
-### 5.3 Uninstall iflearner-operator
-
-Please follow [iflearner-operator](https://github.com/iflytek/iflearner-operator) document.
+### 4.1 Deployment Diagram
+![](images/iflearner-flow-deploy-arch1.png)

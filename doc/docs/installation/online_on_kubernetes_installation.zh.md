@@ -62,6 +62,7 @@ Iflearner Flow是一个基于底层联邦学习框架Iflearner，针对横向联
 在真实场景下，各方都是隔离的，需要各自部署一套kubernetes集群。
 
 ### 3.1 部署示意图
+![](images/iflearner-flow-deploy-arch.png)
 
 ### 3.2 服务侧部署
 #### 3.2.1 部署kubernetes
@@ -69,10 +70,10 @@ Iflearner Flow是一个基于底层联邦学习框架Iflearner，针对横向联
 > 当前支持版本为1.18
 
 #### 3.2.2 部署iflearner-operator
-参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)文档
+参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)
 
 #### 3.2.3 部署iflearner-flow-server
-我们提供了一个极简的部署方式, 请参阅[flow-server部署和运维指南](https://github.com/iflytek/iflearner-operator)
+我们提供了一个极简的部署方式, 请参阅[flow-server部署和运维指南](https://github.com/iflytek/iflearner-flow/blob/main/deploy/in_standalone_kubernetes/iflearner_flow_server/README_zh.md)
 
 ### 3.3 联邦侧部署
 每个联邦方执行步骤一致，下述为单个联邦方下的执行步骤
@@ -82,13 +83,13 @@ Iflearner Flow是一个基于底层联邦学习框架Iflearner，针对横向联
 > 当前支持版本为1.18
 
 #### 3.3.2 部署iflearner-operator
-参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)文档
+参见[iflearner-operator](https://github.com/iflytek/iflearner-operator)
 
 #### 3.3.3 部署iflearner-flow-federate
-我们提供了一个极简的部署方式, 请参阅[flow-server部署和运维指南](https://github.com/iflytek/iflearner-operator)
-
+我们提供了一个极简的部署方式, 请参阅[flow-federate部署和运维指南](https://github.com/iflytek/iflearner-flow/blob/main/deploy/in_standalone_kubernetes/iflearner_flow_federate/README_zh.md)
 
 ## 4. 项目部署(测试验证场景下部署)
 在测试验证场景下，我们可以复用一套kubernetes集群，在同一个集群下去做测试验证。
 
 ### 4.1 部署示意图
+![](images/iflearner-flow-deploy-arch1.png)
