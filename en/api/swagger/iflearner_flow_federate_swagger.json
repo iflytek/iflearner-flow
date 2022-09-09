@@ -1,0 +1,291 @@
+{
+  "swagger": "2.0",
+  "basePath": "/api/v1",
+  "paths": {
+    "/task": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse36db40c7-7137-4e4c-b3a6-3131b890f119"
+            }
+          }
+        },
+        "summary": "List tasks",
+        "operationId": "get_task_list",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The current page index",
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "The size of current page of query",
+            "default": 10
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/task/{task_id}": {
+      "parameters": [
+        {
+          "name": "task_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsef37d7780-e837-45a4-af76-29aa4ae3d012"
+            }
+          }
+        },
+        "operationId": "get_task",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/task/{task_id}/logs": {
+      "parameters": [
+        {
+          "name": "task_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse123e75fa-6293-4dbf-8b2f-744bb2f2576b"
+            }
+          }
+        },
+        "summary": "Get the task logs",
+        "operationId": "get_task_logs",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Iflearner Flow Federate API",
+    "version": "1.0",
+    "description": "Iflearner Flow Federate API"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "task",
+      "description": "Task API"
+    }
+  ],
+  "definitions": {
+    "CustomResponse36db40c7-7137-4e4c-b3a6-3131b890f119": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TaskList"
+        }
+      },
+      "type": "object"
+    },
+    "TaskList": {
+      "properties": {
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaskFields"
+          }
+        },
+        "task_count": {
+          "type": "integer",
+          "description": "sum of query"
+        }
+      },
+      "type": "object"
+    },
+    "TaskFields": {
+      "required": [
+        "federate_datas",
+        "name",
+        "template_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "remark": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 0,
+          "maxLength": 500
+        },
+        "template_id": {
+          "type": "string",
+          "description": "The id of template"
+        },
+        "federate_datas": {
+          "type": "array",
+          "description": "The federate data mapping",
+          "items": {
+            "$ref": "#/definitions/FederateDataFields"
+          }
+        },
+        "task_id": {
+          "type": "string",
+          "description": "The id of task"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of task"
+        },
+        "create_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The create time of task"
+        },
+        "modify_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The update time of task"
+        }
+      },
+      "type": "object"
+    },
+    "FederateDataFields": {
+      "required": [
+        "federated_data",
+        "federated_id"
+      ],
+      "properties": {
+        "federated_id": {
+          "type": "string",
+          "description": "The id of federate member"
+        },
+        "federated_data": {
+          "type": "string",
+          "description": "The data path of federate"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponsef37d7780-e837-45a4-af76-29aa4ae3d012": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TaskFields"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponse123e75fa-6293-4dbf-8b2f-744bb2f2576b": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/LogsFields"
+        }
+      },
+      "type": "object"
+    },
+    "LogsFields": {
+      "properties": {
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "object"
+    }
+  },
+  "responses": {
+    "ParseError": {
+      "description": "When a mask can't be parsed"
+    },
+    "MaskError": {
+      "description": "When any error occurs on mask"
+    },
+    "IflearnerFlowFederateError": {},
+    "Exception": {}
+  },
+  "host": "localhost"
+}

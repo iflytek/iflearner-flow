@@ -1,0 +1,73 @@
+{
+  "id": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+  "name": "Iflearner Flow Federate API 1.0",
+  "description": "Iflearner Flow Federate API",
+  "order": [
+    "38537e93-affc-5ffa-8fc2-0f963bc66bee"
+  ],
+  "requests": [
+    {
+      "id": "38537e93-affc-5ffa-8fc2-0f963bc66bee",
+      "method": "GET",
+      "name": "Swagger specifications",
+      "description": "The API Swagger specifications as JSON",
+      "url": "http://localhost/api/v1/swagger.json",
+      "headers": "",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "time": 1662722523
+    },
+    {
+      "id": "1bc8e2dc-d973-56d4-927a-51a96eacc769",
+      "method": "GET",
+      "name": "get_task_list",
+      "description": "List tasks",
+      "url": "http://localhost/api/v1/task",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {},
+      "time": 1662722523
+    },
+    {
+      "id": "e28db132-f6c0-52eb-ba9c-529f1c72d801",
+      "method": "GET",
+      "name": "get_task",
+      "url": "http://localhost/api/v1/task/:task_id",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1662722523
+    },
+    {
+      "id": "5635b68e-a6e6-53c8-81ef-27c7dae063cc",
+      "method": "GET",
+      "name": "get_task_logs",
+      "description": "Get the task logs",
+      "url": "http://localhost/api/v1/task/:task_id/logs",
+      "headers": "X-Fields:",
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440",
+      "folder": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "pathVariables": {
+        "task_id": ""
+      },
+      "time": 1662722523
+    }
+  ],
+  "folders": [
+    {
+      "id": "a53a0dc5-e5be-558f-a810-4526374d833c",
+      "name": "task",
+      "description": "Task API",
+      "order": [
+        "1bc8e2dc-d973-56d4-927a-51a96eacc769",
+        "e28db132-f6c0-52eb-ba9c-529f1c72d801",
+        "5635b68e-a6e6-53c8-81ef-27c7dae063cc"
+      ],
+      "collectionId": "486b5558-fad5-55fa-b802-d7cf7eefb440"
+    }
+  ],
+  "timestamp": 1662722523
+}

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/about/changelog/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/about/changelog/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/about/changelog/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/about/contact/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/about/contact/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/about/contact/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/api/errcode/iflearner_flow_federate_errcode/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/api/errcode/iflearner_flow_federate_errcode/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/api/errcode/iflearner_flow_federate_errcode/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/api/errcode/iflearner_flow_server_errcode/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/api/errcode/iflearner_flow_server_errcode/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/api/errcode/iflearner_flow_server_errcode/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/api/swagger/iflearner_flow_federate_swagger/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/api/swagger/iflearner_flow_federate_swagger/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/api/swagger/iflearner_flow_federate_swagger/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/api/swagger/iflearner_flow_server_swagger/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/api/swagger/iflearner_flow_server_swagger/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/api/swagger/iflearner_flow_server_swagger/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/flow_federate_cli/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/flow_federate_cli/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/flow_federate_cli/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/flow_federate_sdk/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/flow_federate_sdk/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/flow_federate_sdk/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/flow_server_cli/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/flow_server_cli/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/flow_server_cli/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/flow_server_sdk/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/flow_server_sdk/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/flow_server_sdk/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/cli/flow_federate/task/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/cli/flow_federate/task/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/cli/flow_federate/task/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/cli/flow_server/task/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/cli/flow_server/task/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/cli/flow_server/task/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/cli/flow_server/template/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/cli/flow_server/template/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/cli/flow_server/template/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/sdk/flow_federate/task/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/sdk/flow_federate/task/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/sdk/flow_federate/task/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/sdk/flow_server/task/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/sdk/flow_server/task/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/sdk/flow_server/task/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/client/sdk/flow_server/template/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/client/sdk/flow_server/template/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/client/sdk/flow_server/template/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/faq/installation/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/faq/installation/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/faq/installation/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/installation/offline_on_kubernetes_installation/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/installation/offline_on_kubernetes_installation/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/installation/offline_on_kubernetes_installation/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/installation/online_on_kubernetes_installation/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/installation/online_on_kubernetes_installation/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/installation/online_on_kubernetes_installation/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/quick_start/mnist/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/quick_start/mnist/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/quick_start/mnist/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/tutorial/dev_manual/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/tutorial/dev_manual/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/tutorial/dev_manual/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/tutorial/system_arch/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/tutorial/system_arch/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/tutorial/system_arch/"/>
+         
+    </url>
+    <url>
+         <loc>https://iflytek.github.io/iflearner-flow/tutorial/system_arch_zh/</loc>
+         <lastmod>2022-09-09</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://iflytek.github.io/iflearner-flow/en/tutorial/system_arch_zh/"/>
+         <xhtml:link rel="alternate" hreflang="zh" href="https://iflytek.github.io/iflearner-flow/zh/tutorial/system_arch_zh/"/>
+         
+    </url>
+</urlset>

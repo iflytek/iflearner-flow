@@ -1,0 +1,956 @@
+{
+  "swagger": "2.0",
+  "basePath": "/api/v1",
+  "paths": {
+    "/federate": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsee59b10b7-1d5c-4aaf-9250-a3b57610a71e"
+            }
+          }
+        },
+        "summary": "List Federated members",
+        "operationId": "get_federate_list",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The current page index",
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "The size of current page of query",
+            "default": 10
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "federate"
+        ]
+      }
+    },
+    "/task": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsefbe5d5bb-2ef3-477b-94a5-c7d32012e6c9"
+            }
+          }
+        },
+        "summary": "List tasks",
+        "operationId": "get_task_list",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The current page index",
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "The size of current page of query",
+            "default": 10
+          },
+          {
+            "name": "federated_id",
+            "in": "query",
+            "type": "string",
+            "description": "The federated id of query",
+            "default": ""
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsef6405836-9613-4501-b9ef-73c0ff076816"
+            }
+          }
+        },
+        "summary": "Create a task",
+        "operationId": "post_task_list",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TaskBaseFields"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/task/{task_id}": {
+      "parameters": [
+        {
+          "name": "task_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsea7e9dae9-84a7-47c7-b6d7-1c6badde5551"
+            }
+          }
+        },
+        "summary": "Get a specified task",
+        "operationId": "get_task",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Delete a specified task",
+        "operationId": "delete_task",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Update a specified task",
+        "operationId": "put_task",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TaskBaseFields"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/task/{task_id}/start": {
+      "parameters": [
+        {
+          "name": "task_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Start task",
+        "operationId": "post_start_task",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TaskStartRequest"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/task/{task_id}/stop": {
+      "parameters": [
+        {
+          "name": "task_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Stop task",
+        "operationId": "post_stop_task",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "task"
+        ]
+      }
+    },
+    "/template": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse88961e17-de39-447e-a349-e9c778dc342a"
+            }
+          }
+        },
+        "summary": "List templates",
+        "operationId": "get_template_list",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "integer",
+            "description": "The current page index",
+            "default": 1
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "The size of current page of query",
+            "default": 10
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "template"
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponsedd8327f6-936f-4a88-a156-49cdb086ee02"
+            }
+          }
+        },
+        "summary": "Create a template",
+        "operationId": "post_template_list",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TemplateBaseFields"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "template"
+        ]
+      }
+    },
+    "/template/{template_id}": {
+      "parameters": [
+        {
+          "name": "template_id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CustomResponseeffbc7af-9da6-4aac-8cfc-2136fa0fba1d"
+              }
+            }
+          }
+        },
+        "summary": "Get a specified template",
+        "operationId": "get_template",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "template"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Delete a specified template",
+        "operationId": "delete_template",
+        "parameters": [
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "template"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CustomResponse"
+            }
+          }
+        },
+        "summary": "Update a specified template",
+        "operationId": "put_template",
+        "parameters": [
+          {
+            "name": "payload",
+            "required": true,
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TemplateBaseFields"
+            }
+          },
+          {
+            "name": "X-Fields",
+            "in": "header",
+            "type": "string",
+            "format": "mask",
+            "description": "An optional fields mask"
+          }
+        ],
+        "tags": [
+          "template"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Iflearner Flow Server API",
+    "version": "1.0",
+    "description": "Iflearner Flow Server API"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "federate",
+      "description": "Federate API"
+    },
+    {
+      "name": "task",
+      "description": "Task API"
+    },
+    {
+      "name": "template",
+      "description": "Template  API"
+    }
+  ],
+  "definitions": {
+    "CustomResponsee59b10b7-1d5c-4aaf-9250-a3b57610a71e": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/FederateList"
+        }
+      },
+      "type": "object"
+    },
+    "FederateList": {
+      "properties": {
+        "federates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/FederateField"
+          }
+        },
+        "federate_count": {
+          "type": "integer",
+          "description": "sum of federate members for query"
+        }
+      },
+      "type": "object"
+    },
+    "FederateField": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of federate"
+        },
+        "id": {
+          "type": "string",
+          "description": "The id of federate"
+        }
+      },
+      "type": "object"
+    },
+    "TaskBaseFields": {
+      "required": [
+        "federate_data",
+        "name",
+        "template_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "remark": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 0,
+          "maxLength": 500
+        },
+        "template_id": {
+          "type": "string",
+          "description": "The id of template"
+        },
+        "federate_data": {
+          "type": "array",
+          "description": "The federate data mapping",
+          "items": {
+            "$ref": "#/definitions/FederateDataFields"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "FederateDataFields": {
+      "required": [
+        "federated_data",
+        "federated_id"
+      ],
+      "properties": {
+        "federated_id": {
+          "type": "string",
+          "description": "The id of federate member"
+        },
+        "federated_data": {
+          "type": "string",
+          "description": "The data path of federate"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponsefbe5d5bb-2ef3-477b-94a5-c7d32012e6c9": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TaskList"
+        }
+      },
+      "type": "object"
+    },
+    "TaskList": {
+      "properties": {
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaskFields"
+          }
+        },
+        "task_count": {
+          "type": "integer",
+          "description": "sum of query"
+        }
+      },
+      "type": "object"
+    },
+    "TaskFields": {
+      "required": [
+        "federate_data",
+        "name",
+        "template_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "remark": {
+          "type": "string",
+          "description": "The name of task",
+          "minLength": 0,
+          "maxLength": 500
+        },
+        "template_id": {
+          "type": "string",
+          "description": "The id of template"
+        },
+        "federate_data": {
+          "type": "array",
+          "description": "The federate data mapping",
+          "items": {
+            "$ref": "#/definitions/FederateDataFields"
+          }
+        },
+        "task_id": {
+          "type": "string",
+          "description": "The id of task"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of task"
+        },
+        "party_status": {
+          "type": "array",
+          "description": "The status of parties",
+          "items": {
+            "$ref": "#/definitions/PartyStatus"
+          }
+        },
+        "create_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The create time of task"
+        },
+        "modify_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The update time of task"
+        }
+      },
+      "type": "object"
+    },
+    "PartyStatus": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ready": {
+          "type": "boolean"
+        },
+        "complete": {
+          "type": "boolean"
+        },
+        "current_epoch": {
+          "type": "integer"
+        },
+        "total_epoch": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponsef6405836-9613-4501-b9ef-73c0ff076816": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TaskCreateResponse"
+        }
+      },
+      "type": "object"
+    },
+    "TaskCreateResponse": {
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "description": "The id of task"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponsea7e9dae9-84a7-47c7-b6d7-1c6badde5551": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TaskFields"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponse": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        }
+      },
+      "type": "object"
+    },
+    "TaskStartRequest": {
+      "properties": {
+        "epochs": {
+          "type": "integer",
+          "description": "The number of epochs",
+          "default": 10
+        },
+        "hyper_parameter": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enable_smpc": {
+          "type": "boolean",
+          "description": "Whether to enable smpc.",
+          "default": false
+        }
+      },
+      "type": "object"
+    },
+    "TemplateBaseFields": {
+      "required": [
+        "image_url",
+        "name",
+        "remark",
+        "workdir"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of template"
+        },
+        "remark": {
+          "type": "string",
+          "description": "The name of template"
+        },
+        "image_url": {
+          "type": "string",
+          "description": "The url of image"
+        },
+        "workdir": {
+          "type": "string",
+          "description": "The workdir of container"
+        },
+        "command": {
+          "type": "array",
+          "description": "The start command of container",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hyper_parameter": {
+          "type": "array",
+          "description": "The hyper paramter for train",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponse88961e17-de39-447e-a349-e9c778dc342a": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TemplateList"
+        }
+      },
+      "type": "object"
+    },
+    "TemplateList": {
+      "properties": {
+        "templates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TemplateFields"
+          }
+        },
+        "template_count": {
+          "type": "integer",
+          "description": "sum of query"
+        }
+      },
+      "type": "object"
+    },
+    "TemplateFields": {
+      "required": [
+        "image_url",
+        "name",
+        "remark",
+        "workdir"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of template"
+        },
+        "remark": {
+          "type": "string",
+          "description": "The name of template"
+        },
+        "image_url": {
+          "type": "string",
+          "description": "The url of image"
+        },
+        "workdir": {
+          "type": "string",
+          "description": "The workdir of container"
+        },
+        "command": {
+          "type": "array",
+          "description": "The start command of container",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hyper_parameter": {
+          "type": "array",
+          "description": "The hyper paramter for train",
+          "items": {
+            "type": "string"
+          }
+        },
+        "template_id": {
+          "type": "string",
+          "description": "The id of template"
+        },
+        "create_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The create time of template"
+        },
+        "modify_time": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The modify time of template"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponsedd8327f6-936f-4a88-a156-49cdb086ee02": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TemplateCreateResponse"
+        }
+      },
+      "type": "object"
+    },
+    "TemplateCreateResponse": {
+      "properties": {
+        "template_id": {
+          "type": "string",
+          "description": "The id of template"
+        }
+      },
+      "type": "object"
+    },
+    "CustomResponseeffbc7af-9da6-4aac-8cfc-2136fa0fba1d": {
+      "properties": {
+        "ret_code": {
+          "type": "integer",
+          "description": "The code of result",
+          "default": 0
+        },
+        "ret_msg": {
+          "type": "string",
+          "description": "The message of result",
+          "default": "success"
+        },
+        "data": {
+          "$ref": "#/definitions/TemplateFields"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "responses": {
+    "ParseError": {
+      "description": "When a mask can't be parsed"
+    },
+    "MaskError": {
+      "description": "When any error occurs on mask"
+    },
+    "IflearnerFlowServerError": {},
+    "Exception": {}
+  },
+  "host": "localhost"
+}
