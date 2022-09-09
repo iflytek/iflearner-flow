@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: flow-server-pvc
+  namespace: iflearner
+spec:
+  selector: # 指定pv
+    matchLabels:
+      type: flow-server
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi

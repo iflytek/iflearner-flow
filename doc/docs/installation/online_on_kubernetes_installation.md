@@ -10,8 +10,8 @@ Iflearner Flow is a multi-party joint task security scheduling platform based on
     | Component | Version | Description |
     | -------------- | --------- | -------------------------------------- |
     | kubernetes | 1.18 | Container orchestration cluster, flow-server dependency |
-    | mysql | 8.0 | data storage, flow-server dependency |
-    | ifleaner-flow-server | 1.0.0 | server-side scheduling component |
+    | mysql | 5.7 | data storage, flow-server dependency |
+    | ifleaner-flow-server | 0.1.0 | server-side scheduling component |
     | ifleaner-operator          | 0.0.1     | kubernetes crd contorller |
 
 2. Federate side
@@ -19,8 +19,8 @@ Iflearner Flow is a multi-party joint task security scheduling platform based on
     | Component | Version | Description |
     | -------------- | --------- | -------------------------------------- |
     | kubernetes | 1.18 | Container orchestration cluster, flow-server dependency |
-    | mysql | 8.0 | data storage, flow-server dependency |
-    | ifleaner-flow-federate | 1.0.0 | federate-side scheduling component |
+    | mysql | 5.7 | data storage, flow-server dependency |
+    | ifleaner-flow-federate | 0.1.0 | federate-side scheduling component |
     | ifleaner-operator          | 0.0.1     | kubernetes crd contorller |
 
 ### 1.3 System Design
@@ -35,20 +35,20 @@ In this example, for the convenience of demonstration, there is only one host on
 
     | IP Address | Operating System | Host Configuration | Storage | Deployment Modules |
     | --------------------- | ----------------------- | -------- | ---- | -------------------------------- |
-    | 172.31.0.1 | CentOS 7.4 | 16C32G | 200G | kubernetes, mysql, iflearner-flow-server |
+    | 172.31.0.1 | CentOS 7.4 | 16C32G | 100G | kubernetes, mysql, iflearner-flow-server |
 
 2. Federal side
 
     | Federation | IP Addresses | Operating Systems | Host Configuration | Storage | Deployment Modules |
     | --------------------- | --------------------- | ----------------------- | -------- | ---- | -------------------------------- |
-    | Federation 1 | 172.31.0.2 | CentOS 7.4 | 16C32G, one GPU card (not required) | 200G | kubernetes, mysql, iflearner-flow-server, iflearner-opeartor |
-    | Federation 2 | 172.31.0.3 | CentOS 7.4 | 16C32G, one GPU card (not required) | 200G | kubernetes, mysql, iflearner-flow-federate, iflearner-opeartor |
+    | Federation 1 | 172.31.0.2 | CentOS 7.4 | 16C32G, one GPU card (not required) | 100G | kubernetes, mysql, iflearner-flow-server, iflearner-opeartor |
+    | Federation 2 | 172.31.0.3 | CentOS 7.4 | 16C32G, one GPU card (not required) | 100G | kubernetes, mysql, iflearner-flow-federate, iflearner-opeartor |
     > Only the scene with only two federations is demonstrated here, which can be expanded freely
 
 ### 2.2 Host resources and operating system requirements
 | **Category** | **Description** |
 | -------- | ------------------------------------------------------------ |
-| Host configuration | Not less than 16C, 32G, 200G, Gigabit network card, preferably GPU card for training acceleration |
+| Host configuration | Not less than 8C, 31G, 50G, Gigabit network card, preferably GPU card for training acceleration |
 | Operating System | CentOS linux 7.4 and above |
 | File System | 1. The persistent data disk is mounted in the /data directory by default. <br/> 2. The free space of the root directory is not less than 20G. |
 | System Parameters | 1. The number of file handles is not less than 65535. <br>2. The number of user processes is not less than 65535. |

@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flow-federate-srv
+  namespace: iflearner
+  labels:
+    app: flow-federate-srv
+data:
+  flow_federate_prod.yml: |-
+    flask:
+      debug: false
+    database:
+      name: "flow_federate"
+      host: "flow-federate-mysql.iflearner.svc.cluster.local"
+      port: 3306
+      user: "root"
+      password: "flow_federate@123"
+      options:
+        init_command: "SET sql_mode='STRICT_TRANS_TABLES'"
+      sqlalchemy_track_modifycations: false
+      sqlalchemy_echo: false
+      sqlalchemy_pool_size: 10
+      sqlalchemy_pool_timeout: 10
+      sqlalchemy_pool_overflow: 2
+
+    flow:
+      federate_server_addr: "flow-server-srv.iflearner.svc.cluster.local:1235"
+      federate_id: "federate-1"
+      federate_name: "bank"
+      federate_host: "a.party.iflearner.com:30031"
+
+    log:
+      flow:
+        level: "INFO"
+        enable_file: true
+        enable_console: true
+        log_path: "./log/flow.log"
+      sockeio:
+        level: "INFO"
+        enable_file: true
+        enable_console: false
+        log_path: "./log/socket_io.log"
+      sqlengine:
+        level: "INFO"
+        enable_file: true
+        enable_console: false
+        log_path: "./log/sql_engine.log"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flow-federate-srv
+  namespace: iflearner
+spec:
+  selector:
+    matchLabels:
+      app: flow-federate-srv
+  template:
+    metadata:
+      labels:
+        app: flow-federate-srv
+    spec:
+      serviceAccountName: iflearner-operator-controller-manager
+      containers:
+        - name: flow-federate-srv
+          image: iflearner-flow-federate:0.1
+          workingDir: /data/iflearner-flow/python/iflearner_flow_federate
+          command: 
+            - python3
+            - app.py
+          volumeMounts:
+            - name: federate-config
+              mountPath: /data/iflearner-flow/python/iflearner_flow_federate/conf/flow_federate_prod.yaml
+              readOnly: true
+              subPath: flow_federate_prod.yml
+            - mountPath: /data/iflearner-flow/python/iflearner_flow_federate/log
+              name: pvc-volumes
+              subPath: "iflearner-flow/flow-federate-voluments/iflearner_flow_federate/log"
+      volumes:
+        - name: federate-config
+          configMap:
+            defaultMode: 0644
+            name: flow-federate-srv
+        - name: pvc-volumes
+          persistentVolumeClaim:
+            claimName: flow-federate-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flow-federate-srv
+  namespace: iflearner
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 1236
+      targetPort: 1236
+      nodePort: 32236
+  selector:
+    app: flow-federate-srv
