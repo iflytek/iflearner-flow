@@ -32,7 +32,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="iflearner-flow-client",
-    version="0.1.2",
+    version="0.2.0",
     description="Iflearner Flow Client, include flow_server_sdk, flow_federate_client, flow_server_cli, flow_federate_cli",
     author="The iFLYTEK Turing Group",
     url="https://github.com/iflytek/iflearner-flow",

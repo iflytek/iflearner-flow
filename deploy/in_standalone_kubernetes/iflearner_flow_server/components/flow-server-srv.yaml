@@ -23,7 +23,7 @@ data:
       sqlalchemy_pool_timeout: 10
       sqlalchemy_pool_overflow: 2
     flow:
-      iflearner_server_image: "iflearner:0.1.3"
+      iflearner_server_image: ghcr.io/iflytek/iflearner:v0.1.0
       iflearner_server_args:
         - "python"
         - "iflearner/business/homo/aggregate_server.py"
@@ -61,7 +61,7 @@ spec:
       serviceAccountName: iflearner-operator-controller-manager
       containers:
         - name: flow-server-srv
-          image: ghcr.io/iflytek/iflearner-flow-server:0.1.0
+          image: ghcr.io/iflytek/iflearner-flow-server:0.2.0
           workingDir: /data/iflearner-flow/python/iflearner_flow_server
           command:
             - python3

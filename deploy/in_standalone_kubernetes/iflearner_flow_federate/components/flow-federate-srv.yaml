@@ -63,7 +63,7 @@ spec:
       serviceAccountName: iflearner-operator-controller-manager
       containers:
         - name: flow-federate-srv
-          image: ghcr.io/iflytek/iflearner-flow-federate:0.1.0
+          image: ghcr.io/iflytek/iflearner-flow-federate:0.2.0
           workingDir: /data/iflearner-flow/python/iflearner_flow_federate
           command: 
             - python3
