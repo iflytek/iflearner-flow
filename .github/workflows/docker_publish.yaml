@@ -6,8 +6,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  FLOW_SERVER_IMAGE_NAME: iflearner-flow-server
-  FLOW_FEDERATE_IMAGE_NAME: iflearner-flow-federate
+  FLOW_SERVER_IMAGE_NAME: iflytek/iflearner-flow-server
+  FLOW_FEDERATE_IMAGE_NAME: iflytek/iflearner-flow-federate
 
 jobs:
   build-and-push-flow-server-image:
